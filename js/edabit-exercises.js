@@ -1,27 +1,30 @@
 (function(){
     "use strict";
 
+    // Create a function which returns the number of true values there are in an array.
+    //
+    //     Examples
+    // countTrue([true, false, false, true, false]) ➞ 2
+    //
+    // countTrue([false, false, false, false]) ➞ 0
+    //
+    // countTrue([]) ➞ 0
+    // Notes
+    // Return 0 if given an empty array.
+    //     All array items are of the type bool (true or false).
 
-    // const num = 45;
-    // const longFactorial = (num) => {
-    //     var bigInt = BigInt(num);
-    //     var factorial = 1n;
-    //     for (let i = 0n; i < bigInt ; i++) {
-    //         factorial *= bigInt − i;
-    //     }
-    //     return String(factorial);
-    // }
-    //console.log(longFactorial(45));
-
-    let factorialFun = num => {
-        let total = 1;
-        for (let i = 1; i <= num; i++) {
-            total *= i;
+    let countTrue = arr => {
+        if (arr.length === 0) {
+            return 0;
         }
-        return total;
+        let counter = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === true) {
+               counter += 1;
+            }
+        }
+        return counter;
     }
-    console.log(factorialFun(25));
-
 
 
 
