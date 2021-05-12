@@ -61,4 +61,55 @@
         return total;
     }
 
+
+    //--------------------------------------------------------------------
+    //     Given three arrays of integers: arr1, arr2, arr3, return the sum of integers which are common in all three arrays.
+    //
+    //         Examples
+    //     sumCommon([1, 2, 3], [5, 3, 2], [7, 3, 2]) ➞ 5
+    // // 2 & 3 are common in all 3 arrays.
+    //
+    //     sumCommon([1, 2, 2, 3], [5, 3, 2, 2], [7, 3, 2, 2]) ➞ 7
+    // // 2, 2 & 3 are common in all 3 arrays.
+    //
+    //     sumCommon([1], [1], [2]) ➞ 0
+
+    let sumCommon = (arr1, arr2, arr3) => {
+        let total = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr2.includes(arr1[i]) && arr3.includes(arr1[i])) {
+                total += arr1[i];
+                // delete arr2[arr1[i]];
+                // delete arr3[arr1[i]];
+                // arr2.splice(arr1[i], 1);
+                // arr3.splice(arr1[i], 1);
+                arr2.pop(arr1[i]);
+                arr3.pop(arr1[i]);
+            }
+        }
+        return total;
+    }
+
+    // console.log(sumCommon([1, 2, 2, 3, 2], [5, 3, 2, 2, 1], [7, 3, 2, 2, 1]));
+    // console.log(sumCommon([1, 2, 2, 3], [5, 3, 2, 2], [7, 3, 2, 2]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })()
+
